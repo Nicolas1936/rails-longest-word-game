@@ -1,0 +1,11 @@
+<h1>Result</h1>
+<h4><%= @answer %></h4>
+<% case @answer %>
+<% when 1 %>
+<h5><b>Congratulations!</b> <%= @word %> is a valid English word!!!</h5>
+<% when 2 %>
+<h5>Sorry but <b><%= @word %></b> does not seem to be a valid English word...</h5>
+<% else %>
+<h5>Sorry but <b><%= @word %></b> can't be buil out of <%= @token.chars.join(", ") %></h5>
+<% end %>
+<%= link_to "Play again" , new_path %>
